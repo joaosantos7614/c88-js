@@ -142,12 +142,12 @@
 
 		//Toggle a GP inout bit (this is the image on click function)
 		function toggleInput(image){
-			if (endsWith(image.src,"images/bit_0.png")){
-				image.src="images/bit_1.png";
+			if (endsWith(image.src,"images/switch_0.png")){
+				image.src="images/switch_1.png";
 				inbits[image.id[1]]=1;
 			}
 			else{
-				image.src="images/bit_0.png";
+				image.src="images/switch_0.png";
 				inbits[image.id[1]]=0;
 			}
 			refreshMem();
@@ -387,14 +387,14 @@
 
 		<tr><td colspan="9"><h3>GP Input:</h3></td></tr>
 		<tr>
-			<td><img id="i0" src="images/bit_0.png" onclick="toggleInput(this)"/></td>
-			<td><img id="i1" src="images/bit_0.png" onclick="toggleInput(this)"/></td>
-			<td><img id="i2" src="images/bit_0.png" onclick="toggleInput(this)"/></td>
-			<td><img id="i3" src="images/bit_0.png" onclick="toggleInput(this)"/></td>
-			<td><img id="i4" src="images/bit_0.png" onclick="toggleInput(this)"/></td>
-			<td><img id="i5" src="images/bit_0.png" onclick="toggleInput(this)"/></td>
-			<td><img id="i6" src="images/bit_0.png" onclick="toggleInput(this)"/></td>
-			<td><img id="i7" src="images/bit_0.png" onclick="toggleInput(this)"/></td>
+			<td><img id="i0" src="images/switch_0.png" onclick="toggleInput(this)"/></td>
+			<td><img id="i1" src="images/switch_0.png" onclick="toggleInput(this)"/></td>
+			<td><img id="i2" src="images/switch_0.png" onclick="toggleInput(this)"/></td>
+			<td><img id="i3" src="images/switch_0.png" onclick="toggleInput(this)"/></td>
+			<td><img id="i4" src="images/switch_0.png" onclick="toggleInput(this)"/></td>
+			<td><img id="i5" src="images/switch_0.png" onclick="toggleInput(this)"/></td>
+			<td><img id="i6" src="images/switch_0.png" onclick="toggleInput(this)"/></td>
+			<td><img id="i7" src="images/switch_0.png" onclick="toggleInput(this)"/></td>
 		</tr>
 		<tr>
 			<td colspan="9"><h3>Generate a URL to link to this program</h3></td>
