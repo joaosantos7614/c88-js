@@ -151,7 +151,9 @@
 				image.src="images/switch_0.png";
 				inbits[image.id[1]]=0;
 			}
-			refreshMem();
+			var el = document.getElementById("gpiVal")
+            el.innerHTML=bitsToNum(inbits);
+            refreshMem();
 		}
 
 		//Toggle a memory data bit (this is the image on click function)
@@ -176,6 +178,8 @@
 				image.src="images/switch_0.png";
 				addressBits[image.id[7]]=0;
 			}
+            var el = document.getElementById("addressVal")
+            el.innerHTML=bitsToNum([0,0,0,0,0].concat(addressBits));
 		}
 	
 		//This stores the current interval ID, if we have one.
