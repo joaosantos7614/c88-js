@@ -66,7 +66,7 @@
 				if (bits[i]==1){image.src="images/bit_1.png";}
 				else{image.src="images/bit_0.png";}
 			}
-            if (['r', 'p', 'o'].includes(prefix)){
+            if (['r', 'p', 'o'].includes(prefix) && val !== undefined){ //edited here to try so solve the undefined error (added the && val !== undefined)
                 document.getElementById(prefix + 'Val').innerText = val;
             }
 		}
