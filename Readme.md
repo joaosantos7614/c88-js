@@ -4,7 +4,7 @@ This is an emulator for the C88 computer.
 
 A minimalist CPU architecture with only 64 bits of memory.
 
-It is implemented in an FPGA using VHDL, it is available here: https://github.com/danieljabailey/C88
+It is implemented in an FPGA using VHDL, it is available here: https://github.com/lexbailey/C88
 
 This is an emulator for that machine, implemented in javascript.
 

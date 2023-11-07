@@ -31,9 +31,14 @@ function c88()
   this.instr[6] = function(i) { if(this.mem[i] == this.reg) ++this.pc; };	// TSE
   this.instr[7] = function(i) { if(this.mem[i] != this.reg) ++this.pc; };	// TSI
 
-  this.instr[8] = function(i) { this.pc = i - 1; };		// JMP
+  this.instr[8] = function(i) { this.pc = i - 1; };		        // JMP
   this.instr[9] = function(i) { this.pc = this.mem[i] - 1; };	// JMA
-  this.instr[10]= function(i) { this.state = C88_STATE_HALT; }; // Unused
+  this.instr[10]= function(i) {                               // HALT
+    //this.state = C88_STATE_HALT; (maybe this implementation in not the best, but it serves its purpose without touching any of the existing code)
+    if (runner > -1){
+      clearInterval(runner);
+    }
+  };
   this.instr[11]= function(i) { this.state = C88_STATE_HALT; }; // Unused
 
   this.instr[12]= function(i) { this.out = this.reg; };		// IOW
@@ -91,7 +96,7 @@ function c88()
 
   this.debug[8]= function(i) { return "JMP   " + i; };
   this.debug[9]= function(i) { return "JMA   " + i; };
-  this.debug[10]=function(i) { return "ILLEGAL OPCODE"; };
+  this.debug[10]=function(i) { return "HALT"; };           //Changed here to implement HALT
   this.debug[11]=function(i) { return "ILLEGAL OPCODE"; };
   this.debug[12]=function(i) { return "IOW"; };
   this.debug[13]=function(i) { return "IOR"; };
@@ -152,7 +157,7 @@ function c88()
 
     this.reg &= 0xff;
 
-    ++this.pc;
+    ++this.pc;  
     this.pc &= 0x7;
 
     if (this.debugmode) {

@@ -166,6 +166,8 @@
 				image.src="images/switch_0.png";
 				dataBits[image.id[4]]=0;
 			}
+			var el = document.getElementById("dataVal")
+            el.innerHTML=bitsToNum(dataBits);
 		}
 
 		//Toggle an Address bit (this is the image on click function)
